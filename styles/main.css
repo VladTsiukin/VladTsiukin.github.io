@@ -15,6 +15,11 @@ p, li {
   letter-spacing: 1px;
 }
 
+.btn {
+  background: #95ef7f;
+  width: 100px;
+  height: 30px;
+}
 
 html {
   background-color: #7fefe5;
