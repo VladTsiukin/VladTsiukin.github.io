@@ -6,10 +6,10 @@ document.addEventListener('DOMContentLoaded', () => {
   let max_particles = 1000;
 
   var cns = document.createElement('canvas');
-  var raysBody = document.getElementById("js-rays-body");
-  cns.width = $(raysBody).width();
-  cns.height = $(raysBody).height();
-  $(".js-rays").append(cns);
+  var raysBody = document.getElementById("raysBody");
+  cns.width = raysBody.offsetWidth;
+  cns.height = raysBody.offsetHeight;
+  raysBody.append(cns);
 
   var canvas = cns.getContext('2d');
 
@@ -19,12 +19,12 @@ document.addEventListener('DOMContentLoaded', () => {
           this.progress = 0;
           this.canvas = canvas;
 
-          this.x = ($(raysBody).width()) + (Math.random() * 300 - Math.random() * 300);
-          this.y = ($(raysBody).height()) + (Math.random() * 300 - Math.random() * 300);
+          this.x = (raysBody.offsetWidth) + (Math.random() * 300 - Math.random() * 300);
+          this.y = (raysBody.offsetHeight) + (Math.random() * 300 - Math.random() * 300);
           this.s = Math.random() * 1;
           this.a = 0;
-          this.w = $(raysBody).width();
-          this.h = $(raysBody).height();
+          this.w = raysBody.offsetWidth;
+          this.h = raysBody.offsetHeight;
           this.radius = random > .2 ? Math.random() * 1 : Math.random() * 3;
           this.color = random > .2 ? "#fdff52" : "#feffac";
           this.radius = random > .8 ? Math.random() * 2 : this.radius;
