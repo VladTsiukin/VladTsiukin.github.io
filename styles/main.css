@@ -1,46 +1,17 @@
-html {
-  font-size: 10px;
-  font-family: 'Open Sans', sans-serif;
-}
-
-
-h1 {
-  font-size: 60px;
-  text-align: center;
-}
-
-p, li {
-  font-size: 16px;  
-  line-height: 2;
-  letter-spacing: 1px;
-}
-
-.btn {
-  background: #95ef7f;
-  width: 100px;
-  height: 30px;
-}
 
 html {
-  background-color: #7fefe5;
+  font-size: 1rem;
+  font-family: 'Amatic SC', cursive;
+  height: 100%;
+  background-color: #0f0618;
 }
 
 body {
-  width: 600px;
-  margin: 0 auto;
-  background-color: #1d7eed;
-  padding: 0 20px 20px 20px;
-  border: 1px solid black;
+  height: 100%;
 }
 
 h1 {
-  margin: 0;
-  padding: 20px 0;  
-  color: rgb(242, 246, 248);
-  text-shadow: 3px 3px 1px black;
-}
-
-img {
-  display: block;
-  margin: 0 auto;
+  color: white;
+  margin: 2em;
+  position: absolute;
 }
