@@ -103,7 +103,7 @@ document.addEventListener('DOMContentLoaded', () => {
         elem.style.opacity = 1;
   };
 
-  setInterval(animateOpasity, 1000);
+  setTimeout(animateOpasity, 1000);
 
 });
 
