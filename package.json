@@ -4,10 +4,10 @@
   "description": "",
   "main": "main.js",
   "scripts": {
-    "build": "babel src --out-dir docs",
+    "build": "babel src --out-dir dist",
     "lint": "eslint .",
     "lint-fix": "eslint . --fix",
-    "watch": "babel src --out-dir docs -w"
+    "watch": "babel src --out-dir dist -w"
   },
   "repository": {
     "type": "git",
