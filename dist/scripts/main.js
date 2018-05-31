@@ -85,7 +85,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 })();
 
 /**
- * Сlass makes the rays
+ * The Сlass creates the rays
  */
 
 var Rays = function () {
@@ -96,12 +96,12 @@ var Rays = function () {
         this.progress = 0;
         this.canvas = canvas;
 
-        this.x = raysBody.offsetWidth + (Math.random() * 300 - Math.random() * 300);
-        this.y = raysBody.offsetHeight + (Math.random() * 300 - Math.random() * 300);
+        this.x = raysBody.clientWidth / 2;
+        this.y = raysBody.clientHeight / 2;
         this.s = Math.random() * 1;
         this.a = 0;
-        this.w = raysBody.offsetWidth;
-        this.h = raysBody.offsetHeight;
+        this.w = raysBody.clientWidth;
+        this.h = raysBody.clientHeight;
         this.radius = random > .2 ? Math.random() * 1 : Math.random() * 3;
         this.color = random > .2 ? "#fdff52" : "#feffac";
         this.radius = random > .8 ? Math.random() * 2 : this.radius;
@@ -146,7 +146,7 @@ var Rays = function () {
 }();
 
 /**
- * The Class makes a random rgba color
+ * The Class creates a random rgba color
  */
 
 
@@ -180,32 +180,3 @@ var RandomColor = function () {
 }();
 
 /* ====================================================================================================== */
-
-// Source: https://github.com/jserz/js_piece/blob/master/DOM/ParentNode/append()/append().md
-
-
-(function (arr) {
-    arr.forEach(function (item) {
-        if (item.hasOwnProperty('append')) {
-            return;
-        }
-        Object.defineProperty(item, 'append', {
-            configurable: true,
-            enumerable: true,
-            writable: true,
-            value: function append() {
-                var argArr = Array.prototype.slice.call(arguments),
-                    docFrag = document.createDocumentFragment();
-
-                argArr.forEach(function (argItem) {
-                    var isNode = argItem instanceof Node;
-                    docFrag.appendChild(isNode ? argItem : document.createTextNode(String(argItem)));
-                });
-
-                this.appendChild(docFrag);
-            }
-        });
-    });
-})([Element.prototype, Document.prototype, DocumentFragment.prototype]);
-
-/* ===================================================================================================== */
