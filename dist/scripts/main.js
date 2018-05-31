@@ -21,13 +21,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
             var max_rays = 1000;
             var rays = [];
-            var init_num = popolate(max_rays);
+            var init_num = setRays(max_rays);
 
-            function popolate(num) {
+            function setRays(num) {
                 for (var i = 0; i < num; i++) {
                     setTimeout(function () {
                         rays.push(new Rays(canvas, i, raysBody));
-                    }.bind(this), i * 20);
+                    }, i * 20);
                 }
                 return rays.length;
             }
@@ -39,17 +39,17 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 canvas.globalAlpha = 1;
             }
 
-            function update() {
+            function animate() {
                 rays = rays.filter(function (p) {
                     return p.move();
                 });
                 if (rays.length < init_num) {
-                    popolate(1);
+                    setRays(1);
                 }
                 clear();
-                requestAnimationFrame(update.bind(this));
+                requestAnimationFrame(animate.bind(this));
             }
-            update();
+            animate();
         })();
 
         // animate opasity: 
@@ -63,7 +63,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         (function () {
             var footer = document.querySelector('footer');
             var elp = document.createElement('p');
-            elp.textContent = 'Vlad Tsiukin ' + new Date().getFullYear().toString() + ' \xA9';
+            elp.textContent = '\xA9 ' + new Date().getFullYear().toString() + ' Vlad Tsiukin';
             footer.insertAdjacentElement('afterbegin', elp);
         })();
     });

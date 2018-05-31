@@ -17,15 +17,13 @@
             
             let max_rays = 1000;
             let rays = [];
-            let init_num = popolate(max_rays);
-            
-            function popolate(num) {
+            let init_num = setRays(max_rays);
+
+            function setRays(num) {
                 for (var i = 0; i < num; i++) {
-                    setTimeout(
-                        function () {
+                    setTimeout(() => {
                             rays.push(new Rays(canvas, i, raysBody));
-                        }.bind(this)
-                        , i * 20);
+                        }, i * 20);
                 }
                 return rays.length;
             }
@@ -37,17 +35,17 @@
                 canvas.globalAlpha = 1;
             }
           
-            function update() {
+            function animate() {
                 rays = rays.filter(function (p) {
                     return p.move();
                 });
                 if (rays.length < init_num) {
-                    popolate(1);
+                    setRays(1);
                 }
                 clear();
-                requestAnimationFrame(update.bind(this));
+                requestAnimationFrame(animate.bind(this));
             }
-            update();
+            animate();
         })();
     
         // animate opasity: 
@@ -61,7 +59,7 @@
         (function() {
             const footer = document.querySelector('footer');
             const elp = document.createElement('p');
-            elp.textContent = 'Vlad Tsiukin ' + new Date().getFullYear().toString() + ' \xA9';
+            elp.textContent =  '\xA9 ' + new Date().getFullYear().toString() + ' Vlad Tsiukin';
             footer.insertAdjacentElement('afterbegin', elp);
         })();
 
