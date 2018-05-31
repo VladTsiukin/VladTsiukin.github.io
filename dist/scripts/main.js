@@ -106,11 +106,6 @@ var Rays = function () {
         if (sessionStorage.getItem('isColor') === 'true') {
             this.color = random > .1 ? RandomColor.setRandomRgba() : RandomColor.setRandomRgba();
         }
-
-        this.variantx1 = Math.random() * 300;
-        this.variantx2 = Math.random() * 400;
-        this.varianty1 = Math.random() * 100;
-        this.varianty2 = Math.random() * 120;
     }
 
     _createClass(Rays, [{
