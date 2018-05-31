@@ -84,6 +84,10 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     });
 })();
 
+/**
+ * Сlass makes the rays
+ */
+
 var Rays = function () {
     function Rays(canvas, progress, raysBody) {
         _classCallCheck(this, Rays);
@@ -140,6 +144,11 @@ var Rays = function () {
 
     return Rays;
 }();
+
+/**
+ * The Class makes a random rgba color
+ */
+
 
 var RandomColor = function () {
     function RandomColor() {

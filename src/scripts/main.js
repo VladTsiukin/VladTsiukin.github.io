@@ -85,7 +85,9 @@
       });
 })();
 
-
+/**
+ * Сlass makes the rays
+ */
 class Rays {
     constructor(canvas, progress, raysBody) {
         let random = Math.random();
@@ -136,6 +138,9 @@ class Rays {
 
 }
 
+/**
+ * The Class makes a random rgba color
+ */
 class RandomColor {
     static setRandomRgba() {
         let r = this.getRandomArbitrary(0, 255);
