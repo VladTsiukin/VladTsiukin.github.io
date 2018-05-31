@@ -7,13 +7,22 @@
         
         // animate rays
         (function() {
-            var cns = document.createElement('canvas');
-            var raysBody = document.getElementsByClassName("main-container")[0];
+            // set sessionStorage
+            if (sessionStorage.getItem('isColor')) {
+                ;
+            }
+            else {
+                sessionStorage.setItem('isColor', 'false');
+            }
+
+            // set animate
+            const cns = document.createElement('canvas');
+            const raysBody = document.getElementsByClassName("main-container")[0];
+            const btnRays = document.getElementsByClassName('btn-rays')[0];
             cns.width = raysBody.clientWidth;
             cns.height = raysBody.clientHeight;
             raysBody.append(cns);
-          
-            var canvas = cns.getContext('2d');
+            const canvas = cns.getContext('2d');
             
             let max_rays = 1000;
             let rays = [];
@@ -45,7 +54,15 @@
                 clear();
                 requestAnimationFrame(animate.bind(this));
             }
+
             animate();
+
+            btnRays.addEventListener('click', (event) => {
+                (sessionStorage.getItem('isColor') === 'false') ? sessionStorage.setItem('isColor', 'true') 
+                                                                : sessionStorage.setItem('isColor', 'false');            
+                window.location.reload();
+            });
+
         })();
     
         // animate opasity: 
@@ -85,7 +102,10 @@ class Rays {
         this.radius = random > .8 ? Math.random() * 2 : this.radius;
         this.color = random > .8 ? "#feffac" : this.color;
 
-        // this.color  = random > .1 ? "#ffae00" : "#f0ff00" // rays
+        if (sessionStorage.getItem('isColor') === 'true') {
+            this.color  = random > .1 ? RandomColor.setRandomRgba(): RandomColor.setRandomRgba();
+        }
+
         this.variantx1 = Math.random() * 300;
         this.variantx2 = Math.random() * 400;
         this.varianty1 = Math.random() * 100;
@@ -116,6 +136,25 @@ class Rays {
         this.render();
         this.progress++;
         return true;
+    }
+
+}
+
+class RandomColor {
+    static setRandomRgba() {
+        let r = this.getRandomArbitrary(0, 255);
+        let g = this.getRandomArbitrary(0, 255);
+        let b = this.getRandomArbitrary(0, 255);
+        let a = Math.random();
+        return this.getRgba(r, g, b, a);
+    }
+
+    static getRgba(r, g, b, a) {
+        return 'rgba(' + r + ',' + g + ',' + b + ',' + a + ')';
+    }
+
+    static getRandomArbitrary(min, max) {
+        return Math.floor(Math.random() * (max - min)) + min;
     }
 }
 

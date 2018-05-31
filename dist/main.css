@@ -21,6 +21,8 @@ body {
 h1 {
   margin: 2em;
   position: absolute;
+  display: flex;
+  align-items: center;
 }
 
 footer {
@@ -33,4 +35,31 @@ footer {
         -ms-transition: opacity 3s ease-in-out;
          -o-transition: opacity 3s ease-in-out;
             transition: opacity 3s ease-in-out;
+}
+
+/* Style buttons */
+.btn-rays {
+  background: #00ff4c; /* Old Browsers */
+  background: -webkit-linear-gradient(bottom right,#00ff4c,#03f3ff); /*Safari 5.1-6*/
+  background: -o-linear-gradient(bottom right,#00ff4c,#03f3ff); /*Opera 11.1-12*/
+  background: -moz-linear-gradient(bottom right,#00ff4c,#03f3ff); /*Fx 3.6-15*/
+  background: linear-gradient(bottom right, #00ff4c, #03f3ff); /*Standard*/
+  border: none;
+  color: white;
+  padding: 0.5em;
+  font-size: 1rem;
+  cursor: pointer;
+  margin: 0;
+  margin-right: 0.3rem;
+  top: -50%;
+  border-radius: 1em 0 1em 0;
+}
+
+/* Darker background on mouse-over */
+.btn-rays:hover {
+  background: #00ff4c; /* Old Browsers */
+  background: -webkit-linear-gradient(bottom right,#00ff4c,#005f64); /*Safari 5.1-6*/
+  background: -o-linear-gradient(bottom right,#00ff4c,#005f64); /*Opera 11.1-12*/
+  background: -moz-linear-gradient(bottom right,#00ff4c,#005f64); /*Fx 3.6-15*/
+  background: linear-gradient(bottom right, #00ff4c, #005f64); /*Standard*/
 }
