@@ -57,6 +57,7 @@
 
             animate();
 
+            // if session storage true => random color
             btnRays.addEventListener('click', (event) => {
                 (sessionStorage.getItem('isColor') === 'false') ? sessionStorage.setItem('isColor', 'true') 
                                                                 : sessionStorage.setItem('isColor', 'false');            

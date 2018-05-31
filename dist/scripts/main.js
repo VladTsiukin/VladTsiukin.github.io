@@ -60,6 +60,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
             animate();
 
+            // if session storage true => random color
             btnRays.addEventListener('click', function (event) {
                 sessionStorage.getItem('isColor') === 'false' ? sessionStorage.setItem('isColor', 'true') : sessionStorage.setItem('isColor', 'false');
                 window.location.reload();
