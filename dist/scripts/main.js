@@ -95,9 +95,10 @@ var Rays = function () {
         var random = Math.random();
         this.progress = 0;
         this.canvas = canvas;
-
-        this.x = raysBody.clientWidth / 2;
-        this.y = raysBody.clientHeight / 2;
+        this.entryPointW = raysBody.clientWidth / 2;
+        this.entryPointH = raysBody.clientHeight / 2;
+        this.x = this.entryPointW / 2 + Math.random() * this.entryPointW;
+        this.y = this.entryPointH / 2 + Math.random() * this.entryPointH;
         this.s = Math.random() * 1;
         this.a = 0;
         this.w = raysBody.clientWidth;
